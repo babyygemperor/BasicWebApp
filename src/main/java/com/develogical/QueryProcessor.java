@@ -21,16 +21,18 @@ public class QueryProcessor {
         } else if (query.toLowerCase().contains("name")) {
             return "Aamin";
         } else if (query.toLowerCase().contains("what")) {
+            String[] parts = query.toLowerCase().split(":");
             Pattern p = Pattern.compile("\\d+");
-            Matcher m = p.matcher(query.toLowerCase());
+            Matcher m = p.matcher(parts[1]);
             int finalAnswer = 0;
             while(m.find()) {
                 finalAnswer += Integer.parseInt(m.group());
             }
             return String.valueOf(finalAnswer);
         } else if (query.toLowerCase().contains("which")) {
+            String[] parts = query.toLowerCase().split(":");
             Pattern p = Pattern.compile("\\d+");
-            Matcher m = p.matcher(query.toLowerCase());
+            Matcher m = p.matcher(parts[1]);
             List<Integer> finalAnswer = new ArrayList<>();
             while(m.find()) {
                 finalAnswer.add(Integer.parseInt(m.group()));
