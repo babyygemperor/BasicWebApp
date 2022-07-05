@@ -19,7 +19,7 @@ public class QueryProcessor {
             } else if (query.toLowerCase().contains("name")) {
                 return "Aamin";
             } else if (query.toLowerCase().contains("what")) {
-                String[] parts = query.toLowerCase().split(": ");
+                String[] parts = query.toLowerCase().split(":");
                 System.out.println(Arrays.toString(parts));
                 Pattern p = Pattern.compile("\\d+");
                 Matcher m = p.matcher(parts[1]);
@@ -29,18 +29,18 @@ public class QueryProcessor {
                 }
                 return String.valueOf(finalAnswer);
             } else if (query.toLowerCase().contains("which")) {
-                String[] parts = query.toLowerCase().split(": ");
-                System.out.println(Arrays.toString(parts));
+                String[] parts = query.toLowerCase().split(":");
                 Pattern p = Pattern.compile("\\d+");
                 Matcher m = p.matcher(parts[1]);
                 List<Integer> finalAnswer = new ArrayList<>();
                 while (m.find()) {
                     finalAnswer.add(Integer.parseInt(m.group()));
                 }
+                System.out.println(finalAnswer);
                 return String.valueOf(Collections.max(finalAnswer));
             }
         } catch (NoSuchElementException e) {
-            return "50";
+            return "";
         }
         return "";
     }
