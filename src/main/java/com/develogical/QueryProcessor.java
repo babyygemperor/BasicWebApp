@@ -14,7 +14,9 @@ public class QueryProcessor {
         } else if (query.toLowerCase().contains("name")) {
             return "Aamin";
         } else if (query.toLowerCase().contains("what")) {
-            return "Random 123 this is random random random";
+            return "69";
+        } else if (query.toLowerCase().contains("which")) {
+            return "420";
         }
         return "";
     }
