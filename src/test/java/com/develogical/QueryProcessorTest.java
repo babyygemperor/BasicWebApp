@@ -33,12 +33,12 @@ public class QueryProcessorTest {
 
     @Test
     public void AddsNumbers() throws Exception {
-        assertThat(queryProcessor.process("What is 202 plus 2020"), containsString("2222"));
+        assertThat(queryProcessor.process("what is 10 plus 3"), containsString("13"));
     }
 
     @Test
     public void WhichOfTheFollowing() throws Exception {
-        assertThat(queryProcessor.process("What is 202 plus 2020"), containsString("2222"));
+        assertThat(queryProcessor.process("which of the following numbers is the largest: 374, 14"), containsString("374"));
     }
 
     @Test
