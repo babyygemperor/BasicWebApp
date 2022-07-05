@@ -30,6 +30,17 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("name"), containsString("Aamin"));
     }
 
+
+    @Test
+    public void AddsNumbers() throws Exception {
+        assertThat(queryProcessor.process("What is 202 plus 2020"), containsString("2222"));
+    }
+
+    @Test
+    public void WhichOfTheFollowing() throws Exception {
+        assertThat(queryProcessor.process("What is 202 plus 2020"), containsString("2222"));
+    }
+
     @Test
     public void isNotCaseSensitive() throws Exception {
         assertThat(queryProcessor.process("shakespeare"), containsString("playwright"));

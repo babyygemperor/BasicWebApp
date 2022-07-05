@@ -1,5 +1,12 @@
 package com.develogical;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -14,9 +21,21 @@ public class QueryProcessor {
         } else if (query.toLowerCase().contains("name")) {
             return "Aamin";
         } else if (query.toLowerCase().contains("what")) {
-            return "69";
+            Pattern p = Pattern.compile("\\d+");
+            Matcher m = p.matcher(query.toLowerCase());
+            int finalAnswer = 0;
+            while(m.find()) {
+                finalAnswer += Integer.parseInt(m.group());
+            }
+            return String.valueOf(finalAnswer);
         } else if (query.toLowerCase().contains("which")) {
-            return "420";
+            Pattern p = Pattern.compile("\\d+");
+            Matcher m = p.matcher(query.toLowerCase());
+            List<Integer> finalAnswer = new ArrayList<>();
+            while(m.find()) {
+                finalAnswer.add(Integer.parseInt(m.group()));
+            }
+            return String.valueOf(Collections.max(finalAnswer));
         }
         return "";
     }
