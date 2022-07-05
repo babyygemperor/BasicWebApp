@@ -13,6 +13,8 @@ public class QueryProcessor {
                     "spammer in the TUM Informatik Community and the Discord Server.";
         } else if (query.toLowerCase().contains("name")) {
             return "Aamin";
+        } else if (query.toLowerCase().contains("what")) {
+            return "Random 123 this is random random random";
         }
         return "";
     }
